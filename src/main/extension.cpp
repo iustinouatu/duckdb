@@ -51,12 +51,10 @@ string ParsedExtensionMetaData::GetInvalidMetadataError() {
 	}
 
 	// An unknown ABI is invalid external metadata.
-        // Do not treat it as an internal engine failure.
-   	if (abi_type == ExtensionABIType::UNKNOWN) {
-        	return StringUtil::Format(
-            	"Unknown ABI type for extension: '%s'",
-            	PrettyPrintString(extension_abi_metadata));
-    	}
+	// Do not treat it as an internal engine failure.
+	if (abi_type == ExtensionABIType::UNKNOWN) {
+		return StringUtil::Format("Unknown ABI type for extension: '%s'", PrettyPrintString(extension_abi_metadata));
+	}
 
 	string result;
 
